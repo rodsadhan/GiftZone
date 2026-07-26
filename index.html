@@ -18,9 +18,9 @@
                      class="w-full h-full object-cover opacity-90">
                 
                 <div class="absolute top-4 left-4 right-4 flex justify-between items-center z-20">
-                    <button class="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition cursor-pointer flex items-center justify-center">
-                        <span class="material-symbols-outlined text-xl">arrow_back</span>
-                    </button>
+<button id="balanceBox" class="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition cursor-pointer flex items-center justify-center">
+    <span id="balanceText">₹000.0</span>
+</button>
                     
                     <div class="flex items-center gap-2 relative">
                         <button onclick="openHistory()" class="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition cursor-pointer flex items-center justify-center" title="History">
@@ -201,11 +201,69 @@ document.getElementById("amountInput").addEventListener("input", function(){
 
 });
 
+let userBalance = Number(localStorage.getItem("balance")) || 0;
+
+
+function updateBalance(){
+
+    document.getElementById("balanceText").innerText =
+    "₹" + userBalance;
+
+    localStorage.setItem("balance", userBalance);
+
+}
+
+
+// Add money function
+function addMoney(amount){
+
+    userBalance += Number(amount);
+
+    updateBalance();
+
+    alert("₹"+amount+" added to your balance");
+
+}
+
+
+// Buy redeem code
+function buyCode(amount){
+
+    if(userBalance < amount){
+
+        let need = amount - userBalance;
+
+        if(confirm("Insufficient balance. Add ₹"+need+"?")){
+
+            addMoney(need);
+
+        }
+
+        return;
+
+    }
+
+
+    userBalance -= amount;
+
+    updateBalance();
+
+
+    alert(
+    "Purchase successful\n\nRemaining balance: ₹"+userBalance
+    );
+
+}
+
+
+// Load balance
+updateBalance();
+
 function processPayment(){
 
 let email = document.getElementById("displayEmail").innerText;
 
-let amount=document.getElementById("amountInput").value;
+let amount = Number(document.getElementById("amountInput").value);
 
 
 if(email=="Sign in with Google"){
@@ -225,15 +283,12 @@ return;
 }
 
 
-// after login continue purchase
-
-alert(
-"Payment started\n\nAmount: ₹"+amount+
-"\nAccount: "+email
-);
+// temporary add money system
+addMoney(amount);
 
 
-// Here add your payment API later
+// after adding money buy code
+buyCode(amount);
 
 }
     </script>
@@ -301,4 +356,4 @@ user.email.charAt(0).toUpperCase();
 </script>
 
 </body>
-  </html>
+</html>
