@@ -1,63 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redeem Code - Google Play Style</title>
+    <title>Google Play - Professional Recharge Code</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
-
 <body class="bg-gray-100 flex justify-center items-center min-h-screen">
 
     <div class="w-full max-w-md bg-white shadow-xl min-h-screen sm:min-h-0 sm:rounded-3xl flex flex-col justify-between overflow-hidden relative">
-
+        
         <div>
             <div class="relative w-full h-48 bg-gray-900">
-                <img id="bannerImage" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Promo Banner" class="w-full h-full object-cover opacity-90">
-
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Promo Banner" class="w-full h-full object-cover opacity-95">
+                
                 <div class="absolute top-4 left-4 right-4 flex justify-between items-center z-20">
-                    <button id="balanceBox" class="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition cursor-pointer flex items-center justify-center">
-                        <span id="balanceText">₹000.0</span>
-                    </button>
+                    <div class="bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full text-white font-medium text-sm flex items-center gap-1">
+                        <span>Balance:</span>
+                        <span id="balanceText">₹0</span>
+                    </div>
 
                     <div class="flex items-center gap-2 relative">
-                        <button onclick="openHistory()" class="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition cursor-pointer flex items-center justify-center" title="History">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path d="M13 3a9 9 0 0 0-9 9H1l3.89 3.89.07.14L9 12H6a7 7 0 1 1 7 7 7 7 0 0 1-7-7h-2a9 9 0 1 0 9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" />
-                            </svg>
+                        <button onclick="openHistory()" class="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition cursor-pointer" title="History">
+                            <span class="material-symbols-outlined text-xl">history</span>
                         </button>
 
-                        <button id="menuButton" class="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 active:scale-90 transition-transform duration-150 cursor-pointer relative flex items-center justify-center">
+                        <button id="menuButton" class="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition cursor-pointer">
                             <span class="material-symbols-outlined text-xl">more_vert</span>
                         </button>
 
                         <div id="dropdownMenu" class="hidden absolute right-0 top-12 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50 transform origin-top-right transition-all duration-200 scale-95 opacity-0">
                             <button onclick="openHelp()" class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3 transition cursor-pointer">
-                                <span class="material-symbols-outlined text-lg text-gray-500">help_outline</span>
-                                Get help
+                                <span class="material-symbols-outlined text-lg text-gray-500">help_outline</span> Get help
                             </button>
                             <button onclick="openFeedback()" class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3 transition cursor-pointer">
-                                <span class="material-symbols-outlined text-lg text-gray-500">feedback</span>
-                                Send feedback
+                                <span class="material-symbols-outlined text-lg text-gray-500">feedback</span> Send feedback
                             </button>
-<button onclick="logout()" 
-class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3 transition cursor-pointer">
-
-    <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" 
-        d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
-    </svg>
-
-    Logout
-</button>
+                            <button onclick="logout()" class="w-full text-left px-4 py-3 text-sm text-red-600 hover:bg-gray-100 flex items-center gap-3 transition cursor-pointer">
+                                <span class="material-symbols-outlined text-lg">logout</span> Logout
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 <div class="absolute bottom-3 left-4 right-4 text-center z-10">
-                    <p class="text-white text-sm font-medium drop-shadow">Claim Exclusive Rewards</p>
+                    <p class="text-white text-sm font-medium drop-shadow">Claim Exclusive Rewards & Recharge</p>
                 </div>
             </div>
 
@@ -65,20 +53,17 @@ class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 flex i
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-10 h-10 flex items-center justify-center flex-shrink-0">
                         <svg class="w-9 h-9" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#ea4335" d="M31.258 35.127C27.355 40.184 25 47.168 25 55.772v400.456c0 8.604 2.355 15.588 6.258 20.645l4.037 3.376L239.54 275.9v-39.8L35.295 31.751l-4.037 3.376z" />
-                            <path fill="#fbbc04" d="M304.795 341.152l-65.255-65.052v-39.8l65.255-65.052 1.517.904 77.218 43.899c22.106 12.571 22.106 33.155 0 45.727l-77.218 43.899-1.517.904z" />
-                            <path fill="#34a853" d="M239.54 236.3L31.258 35.127c7.07-5.518 17.65-5.908 29.988 1.114l213.388 121.31-35.094 35.094z" />
-                            <path fill="#4285f4" d="M239.54 275.9l35.094 35.094L61.246 432.323c-12.338 7.022-22.918 6.632-29.988 1.114L239.54 275.9z" />
+                            <path fill="#ea4335" d="M31.258 35.127C27.355 40.184 25 47.168 25 55.772v400.456c0 8.604 2.355 15.588 6.258 20.645l4.037 3.376L239.54 275.9v-39.8L35.295 31.751l-4.037 3.376z"/>
+                            <path fill="#fbbc04" d="M304.795 341.152l-65.255-65.052v-39.8l65.255-65.052 1.517.904 77.218 43.899c22.106 12.571 22.106 33.155 0 45.727l-77.218 43.899-1.517.904z"/>
+                            <path fill="#34a853" d="M239.54 236.3L31.258 35.127c7.07-5.518 17.65-5.908 29.988 1.114l213.388 121.31-35.094 35.094z"/>
+                            <path fill="#4285f4" d="M239.54 275.9l35.094 35.094L61.246 432.323c-12.338 7.022-22.918 6.632-29.988 1.114L239.54 275.9z"/>
                         </svg>
                     </div>
                     <div>
                         <h1 class="text-lg font-normal text-gray-800">Google Play recharge code</h1>
                         <div onclick="firebaseLogin()" class="flex items-center gap-1 text-sm text-gray-600 cursor-pointer group">
                             <span class="w-5 h-5 bg-teal-700 text-white rounded-full flex items-center justify-center text-xs font-bold" id="avatarLetter">G</span>
-                            <span class="truncate max-w-[200px] group-hover:text-blue-600 font-medium" id="displayEmail">
-                                Sign in with Google
-                            </span>
-                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                            <span class="truncate max-w-[200px] group-hover:text-blue-600 font-medium" id="displayEmail">Sign in with Google</span>
                         </div>
                     </div>
                 </div>
@@ -107,14 +92,11 @@ class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 flex i
                 Pay now
             </button>
         </div>
-
     </div>
 
-
-
     <div id="customModal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-xs flex justify-center items-center z-50 p-4">
-        <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl transform transition-all">
-            <h3 id="modalTitle" class="text-lg font-medium text-gray-800 mb-2">Title</h3>
+        <div class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl">
+            <h3 id="modalTitle" class="text-lg font-medium text-gray-800 mb-2">Notice</h3>
             <p id="modalText" class="text-sm text-gray-600 mb-4">Content goes here...</p>
             <div class="flex justify-end">
                 <button onclick="closeModal()" class="px-5 py-2 text-sm font-medium bg-blue-600 text-white rounded-lg hover:bg-blue-700 cursor-pointer">OK</button>
@@ -122,264 +104,143 @@ class="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 flex i
         </div>
     </div>
 
-    <script>
-        // Toggle 3-dot dropdown menu with animation states
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCHjdC-MvzMpN4A_iTyH1r5VS2dH0MnSO0",
+            authDomain: "giftzone-fe859.firebaseapp.com",
+            projectId: "giftzone-fe859",
+            storageBucket: "giftzone-fe859.firebasestorage.app",
+            messagingSenderId: "1034654087061",
+            appId: "1:1034654087061:web:cd7d8ecfc1c3b53d4e289c"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const provider = new GoogleAuthProvider();
+
+        let currentUser = null;
+        let userBalance = 0;
+
+        // UI toggles
         const menuButton = document.getElementById('menuButton');
         const dropdownMenu = document.getElementById('dropdownMenu');
 
-
         menuButton.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (dropdownMenu.classList.contains('hidden')) {
-                dropdownMenu.classList.remove('hidden');
-                setTimeout(() => {
-                    dropdownMenu.classList.remove('scale-95', 'opacity-0');
-                    dropdownMenu.classList.add('scale-100', 'opacity-100');
-                }, 10);
-            } else {
-                closeDropdown();
-            }
+            dropdownMenu.classList.toggle('hidden');
+            dropdownMenu.classList.toggle('scale-95');
+            dropdownMenu.classList.toggle('opacity-0');
         });
 
-        function closeDropdown() {
-            dropdownMenu.classList.remove('scale-100', 'opacity-100');
-            dropdownMenu.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                dropdownMenu.classList.add('hidden');
-            }, 150);
-        }
-
-
-        // Hide menu when clicking outside
         window.addEventListener('click', () => {
             if (!dropdownMenu.classList.contains('hidden')) {
-                closeDropdown();
+                dropdownMenu.classList.add('hidden', 'scale-95', 'opacity-0');
             }
         });
 
-        // Modal triggers
-        function showModal(title, text) {
+        window.showModal = (title, text) => {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalText').innerText = text;
             document.getElementById('customModal').classList.remove('hidden');
-            closeDropdown();
-        }
+        };
 
-        function closeModal() {
-            document.getElementById('customModal').classList.add('hidden');
-        }
+        window.closeModal = () => document.getElementById('customModal').classList.add('hidden');
+        window.openHelp = () => showModal("Get Help", "Reach out via support@giftzone.com for code recovery queries.");
+        window.openFeedback = () => showModal("Send Feedback", "Thank you for helping us optimize your recharge experience!");
+        window.openHistory = () => showModal("Transaction History", "No successful redemptions tracked on this account yet.");
 
-        function openHelp() {
-            showModal("Get Help", "For issues regarding Google Play recharge codes, please visit the Google Play Support center or check transaction logs.");
-        }
-
-        function openFeedback() {
-            showModal("Send Feedback", "We value your input! Share your thoughts or report bugs to help improve your recharge experience.");
-        }
-
-        function openHistory() {
-            showModal("Recharge History", "No recent transactions found for this account.");
-        }
-
-        // Editable Gmail Function
-        function openEmailEditor() {
-            let newEmail = prompt("Enter new Gmail address:", document.getElementById('displayEmail').innerText);
-            if (newEmail && newEmail.includes('@')) {
-                document.getElementById('displayEmail').innerText = newEmail;
-                document.getElementById('avatarLetter').innerText = newEmail.charAt(0).toUpperCase();
-            } else if (newEmail !== null) {
-                alert("Please enter a valid email address containing '@'.");
-            }
-        }
-
-        // Interactive Preset Amount Buttons
-        function setAmount(amount) {
+        window.setAmount = (amount) => {
             document.getElementById('amountInput').value = amount;
-            const buttons = document.querySelectorAll('.preset-btn');
-            buttons.forEach(btn => {
+            document.querySelectorAll('.preset-btn').forEach(btn => {
                 if (btn.innerText.includes(amount)) {
                     btn.className = "preset-btn border border-blue-600 bg-blue-50/50 rounded-full px-5 py-2 text-sm text-blue-600 font-medium cursor-pointer";
                 } else {
                     btn.className = "preset-btn border border-gray-300 rounded-full px-5 py-2 text-sm text-gray-700 hover:border-blue-600 hover:text-blue-600 transition cursor-pointer";
                 }
             });
+        };
+
+        // Real-time synchronization
+        function loadBalance(user) {
+            const userRef = doc(db, "users", user.uid);
+            onSnapshot(userRef, (snap) => {
+                if (snap.exists()) {
+                    userBalance = snap.data().balance || 0;
+                    document.getElementById("balanceText").innerText = "₹" + userBalance;
+                }
+            });
         }
 
-        document.getElementById("amountInput").addEventListener("input", function() {
+        window.firebaseLogin = async function() {
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                const userRef = doc(db, "users", user.uid);
+                const snap = await getDoc(userRef);
 
-            const buttons = document.querySelectorAll(".preset-btn");
+                if (!snap.exists()) {
+                    await setDoc(userRef, { email: user.email, balance: 0 });
+                }
+                alert("Login successful!");
+            } catch (error) {
+                alert("Login failed: " + error.message);
+            }
+        };
 
-            buttons.forEach(btn => {
-                btn.className = "preset-btn border border-gray-300 rounded-full px-5 py-2 text-sm text-gray-700 hover:border-blue-600 hover:text-blue-600 transition cursor-pointer";
-            });
+        window.logout = async function() {
+            await signOut(auth);
+            location.reload();
+        };
 
+        async function buyCode(amount) {
+            if (!currentUser) return alert("Please sign in first.");
+            const userRef = doc(db, "users", currentUser.uid);
+
+            if (userBalance < amount) {
+                let shortage = amount - userBalance;
+                window.location.href = `addmoney.html?amount=${shortage}`;
+                return;
+            }
+
+            try {
+                await updateDoc(userRef, { balance: userBalance - amount });
+                showModal("Success!", `Successfully redeemed code worth ₹${amount}.`);
+            } catch (err) {
+                alert("Transaction failed. Please try again.");
+            }
+        }
+
+        window.processPayment = function() {
+            let amount = Number(document.getElementById("amountInput").value);
+            if (!currentUser) {
+                window.firebaseLogin();
+                return;
+            }
+            if (amount < 10 || amount > 5000) {
+                alert("Please enter a valid amount between ₹10 and ₹5,000.");
+                return;
+            }
+            buyCode(amount);
+        };
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                currentUser = user;
+                document.getElementById("displayEmail").innerText = user.email;
+                document.getElementById("avatarLetter").innerText = user.email.charAt(0).toUpperCase();
+                loadBalance(user);
+            } else {
+                currentUser = null;
+                document.getElementById("displayEmail").innerText = "Sign in with Google";
+                document.getElementById("avatarLetter").innerText = "G";
+                document.getElementById("balanceText").innerText = "₹0";
+            }
         });
-
-        let userBalance = 0;
-        let currentUser = null;
-
-
-
-
-        function updateBalance() {
-
-            document.getElementById("balanceText").innerText =
-                "₹" + userBalance;
-
-            localStorage.setItem("balance", userBalance);
-
-        }
-
-
-        // Add money function
-// Add money function
-async function addMoney(amount) {
-    if (!currentUser) return alert("Please sign in first.");
-    const userRef = doc(db, "users", currentUser.uid);
-    const snap = await getDoc(userRef);
-    let balance = snap.exists() ? (snap.data().balance || 0) : 0;
-
-    await updateDoc(userRef, {
-        balance: balance + Number(amount)
-    });
-}
-
-// Buy redeem code
-async function buyCode(amount) {
-    if (!currentUser) return alert("Please sign in first.");
-    const userRef = doc(db, "users", currentUser.uid);
-    
-    if (userBalance < amount) {
-        let need = amount - userBalance;
-        location.href = "addmoney.html?amount=" + need;
-        return;
-    }
-
-    await updateDoc(userRef, {
-        balance: userBalance - amount
-    });
-
-    alert("Purchase successful!");
-}
-
-function processPayment() {
-    let email = document.getElementById("displayEmail").innerText;
-    let amount = Number(document.getElementById("amountInput").value);
-
-    if (email === "Sign in with Google" || !currentUser) {
-        window.firebaseLogin();
-        return;
-    }
-
-    if (amount < 10 || amount > 5000) {
-        alert("Enter amount between ₹10 and ₹5000");
-        return;
-    }
-
-    buyCode(amount);
-}
-
     </script>
-    <script type="module">
-import { 
-  initializeApp 
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import { 
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
-  signOut
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-import {
-  getFirestore,
-  doc,
-  getDoc,
-  setDoc,
-  updateDoc,
-  onSnapshot
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCHjdC-MvzMpN4A_iTyH1r5VS2dH0MnSO0",
-    authDomain: "giftzone-fe859.firebaseapp.com",
-    projectId: "giftzone-fe859",
-    storageBucket: "giftzone-fe859.firebasestorage.app",
-    messagingSenderId: "1034654087061",
-    appId: "1:1034654087061:web:cd7d8ecfc1c3b53d4e289c",
-    measurementId: "G-L5S78LHFYE"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const provider = new GoogleAuthProvider();
-
-// Global trackers
-let currentUser = null;
-let userBalance = 0;
-
-// Expose necessary functions globally
-window.db = db;
-window.doc = doc;
-window.getDoc = getDoc;
-window.updateDoc = updateDoc;
-
-window.logout = async function() {
-    await signOut(auth);
-    location.reload();
-}
-
-// Global balance loader
-window.loadBalance = function(user) {
-    const userRef = doc(db, "users", user.uid);
-    onSnapshot(userRef, (snap) => {
-        if (snap.exists()) {
-            userBalance = snap.data().balance || 0;
-            document.getElementById("balanceText").innerText = "₹" + userBalance;
-        }
-    });
-}
-
-window.firebaseLogin = async function() {
-    try {
-        const result = await signInWithPopup(auth, provider);
-        const user = result.user;
-        const userRef = doc(db, "users", user.uid);
-        const snap = await getDoc(userRef);
-
-        if (!snap.exists()) {
-            await setDoc(userRef, {
-                email: user.email,
-                balance: 0
-            });
-        }
-
-        currentUser = user;
-        document.getElementById("displayEmail").innerText = user.email;
-        document.getElementById("avatarLetter").innerText = user.email.charAt(0).toUpperCase();
-
-        window.loadBalance(user);
-        alert("Login successful");
-    } catch (error) {
-        alert(error.message);
-    }
-}
-
-// Auth State Listener
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        currentUser = user;
-        document.getElementById("displayEmail").innerText = user.email;
-        document.getElementById("avatarLetter").innerText = user.email.charAt(0).toUpperCase();
-        window.loadBalance(user);
-    }
-});
-
-    </script>
-
 </body>
-
 </html>
