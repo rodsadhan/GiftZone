@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Funds - Wallet Top Up</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen p-4">
+    <div class="w-full max-w-sm bg-white shadow-xl rounded-2xl p-6 text-center">
+        <h2 class="text-xl font-medium text-gray-800 mb-2">Insufficient Balance</h2>
+        <p class="text-sm text-gray-600 mb-6">You need <span id="shortageAmount" class="font-bold text-blue-600">₹0</span> more to complete this code purchase.</p>
+        
+        <button onclick="startRazorpayPayment()" class="w-full bg-[#0b57d0] text-white font-medium py-3 rounded-full hover:bg-blue-700 transition cursor-pointer mb-3 shadow-sm">
+            Pay with Razorpay
+        </button>
+        <a href="index.html" class="text-sm text-gray-500 hover:underline">Return to Dashboard</a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const amountNeeded = urlParams.get('amount') || '100';
+        document.getElementById('shortageAmount').innerText = "₹" + amountNeeded;
+
+        function startRazorpayPayment() {
+            // Frontend configuration snippet for Razorpay checkout window
+            const options = {
+                "key": "YOUR_RAZORPAY_KEY_ID", // Replace with your key
+                "amount": amountNeeded * 100, // Amount in paise
+                "currency": "INR",
+                "name": "GiftZone Portal",
+                "description": "Wallet Balance Top-Up",
+                "handler": function (response) {
+                    alert("Payment Success ID: " + response.razorpay_payment_id);
+                    window.location.href = "index.html";
+                },
+                "theme": {
+                    "color": "#0b57d0"
+                }
+            };
+            const rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
+</body>
+</html>
